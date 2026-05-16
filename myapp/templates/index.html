@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        color: #333;
+    }
+
+    header {
+        background: #0077cc;
+        color: #fff;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    nav {
+        background: #005fa3;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .hero {
+        background: url("https://picsum.photos/1200/400") no-repeat center center/cover;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 2px 2px 5px black;
+        font-size: 2em;
+    }
+
+    .content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        margin-top: 20px;
+    }
+</style>
+
+
+<section class="hero">
+    <h2>Beautiful Hero Section</h2>
+</section>
+
+<section class="content">
+    <h2>About This Page</h2>
+    <p>This is a sample index page created with HTML and CSS.
+        You can customize it with your own content, images, and styles.</p>
+</section>
+
+{%endblock%}

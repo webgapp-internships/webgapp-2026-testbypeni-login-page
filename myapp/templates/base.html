@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full height layout */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* full viewport height */
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background: #0077cc;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #005fa3;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content grows to fill space */
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Footer always at bottom */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to {{ request.user.username }}</h1>
+        <p>A simple sample index page</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'forms' %}">Forms</a>   
+        <a href="{% url 'table' %}">Record</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Website | All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>

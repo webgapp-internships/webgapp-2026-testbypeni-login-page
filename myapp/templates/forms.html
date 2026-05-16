@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .form-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #444;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>General Form</h2>
+    <form method="post">
+    {% csrf_token %}
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="full_name" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone" required>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+          <option value="">-- Select --</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message / Notes</label>
+        <textarea id="message" name="message" placeholder="Type here..."></textarea>
+      </div>
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="agree" name="agree" required>
+        <label for="agree">I agree to the terms & conditions</label>
+      </div>
+      <button type="submit">Submit</button> -->
+<!-- ✅ Display error messages -->
+<!-- <div class="messages">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    </form>
+  </div>
+</body>
+</html> -->
+
+
+
+
+{% block content %}
+<style>
+  .form-box {
+    margin-top: 30px;
+    background: #fff;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    width: 400px;
+
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  /* label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #444;
+  } */
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  textarea {
+    resize: none;
+    height: 80px;
+  }
+
+  .checkbox-group {
+    display: flex;
+    /* align-items: center; */
+    justify-content: flex-start;
+    /* force left alignment */
+    margin-top: 10px;
+    text-align: left;
+    /* override parent centering */
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    /* margin-right: -180px; */
+    margin-left: -43%;
+    margin-bottom: auto;
+  }
+
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background: #0056b3;
+  }
+</style>
+<div style="justify-content: center; display: flex;">
+  <div class="form-box">
+    <h2>General Form</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label style="display: block; font-weight: bold; margin-bottom: 6px; color: #444;" for="name">Full Name</label>
+        <input type="text" id="name" name="full_name" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label style="display: block; font-weight: bold; margin-bottom: 6px; color: #444;" for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label style="display: block; font-weight: bold; margin-bottom: 6px; color: #444;" for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone" required>
+      </div>
+      <div class="form-group">
+        <label style="display: block; font-weight: bold; margin-bottom: 6px; color: #444;" for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <div class="form-group">
+        <label style="display: block; font-weight: bold; margin-bottom: 6px; color: #444;" for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+          <option value="">-- Select --</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label style="display: block; font-weight: bold; margin-bottom: 6px; color: #444;" for="message">Message / Notes</label>
+        <textarea id="message" name="message" placeholder="Type here..."></textarea>
+      </div>
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="agree" name="agree" required>
+        <label style="display: block; font-weight: bold; margin-bottom: 6px; color: #444; margin-left: -135px;" for="agree">I agree to the terms & conditions</label>
+      </div>
+      <button type="submit">Submit</button>
+      <div class="messages">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </form>
+  </div>
+</div>
+{%endblock%}
